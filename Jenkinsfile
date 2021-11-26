@@ -13,13 +13,13 @@ pipeline {
            }
            steps {
                // Create our project directory.
-               sh 'cd ${GOPATH}/src'
+               sh 'cd ${GOPATHi}/src'
                sh 'mkdir -p ${GOPATH}/src/hello-world'
                // Copy all files in our Jenkins workspace to our project directory.
                sh 'cp -r ${WORKSPACE}/* ${GOPATH}/src/hello-world'
                // Build the app.
 	       sh 'go mod init'
-               sh 'go build'
+               sh 'go build ${WORKSPACE}/* ${GOPATH}/src/hello-world'
            }
        }
        stage('Test') {
