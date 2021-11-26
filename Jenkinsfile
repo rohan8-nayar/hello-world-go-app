@@ -45,7 +45,6 @@ pipeline {
                 sh 'mkdir -p ${GOPATH}/src/hello-world'
                 // Copy all files in our Jenkins workspace to our project directory.                
                 sh 'cp -r ${WORKSPACE}/* ${GOPATH}/src/hello-world'
-                sh 'go env -w GO111MODULE=off'
                 // Remove cached test results.
                 sh 'go clean -cache'
                 // Run Unit Tests.
