@@ -19,8 +19,8 @@ pipeline {
                sh 'cp -r ${WORKSPACE}/* ${GOPATH}/src/hello-world'
                // Build the app.
 	       sh 'ls -la ${GOPATH}/src/hello-world/'
-               sh 'go mod init ${GOPATH}/src/hello-world/'
                sh 'cd ${GOPATH}/src/hello-world/'
+	       sh 'go mod init'
                sh 'go build'
            }
        }
